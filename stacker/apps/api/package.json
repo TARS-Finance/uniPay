@@ -1,0 +1,22 @@
+{
+  "name": "@stacker/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "dev": "tsx watch src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@stacker/chain": "workspace:*",
+    "@stacker/db": "workspace:*",
+    "@stacker/shared": "workspace:*",
+    "bech32": "^2.0.0",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.1",
+    "zod": "^4.1.12"
+  }
+}

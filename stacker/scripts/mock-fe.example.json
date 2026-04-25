@@ -1,0 +1,12 @@
+{
+  "walletAddress": "init1mockfrontenduser",
+  "strategy": {
+    "inputDenom": "usdc",
+    "targetPoolId": "pool-1",
+    "validatorAddress": "initvaloper1validator",
+    "minBalanceAmount": "100",
+    "maxAmountPerRun": "1000",
+    "maxSlippageBps": 100,
+    "cooldownSeconds": 300
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1776952533237,
+      "tag": "0000_lean_mantis",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1776965752425,
+      "tag": "0001_lumpy_paper_doll",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1777101773735,
+      "tag": "0002_add_uusdc_direct_demo",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1777200000000,
+      "tag": "0003_add_withdrawals",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@stacker/chain": ["packages/chain/src/index.ts"],
+      "@stacker/db": ["packages/db/src/index.ts"],
+      "@stacker/shared": ["packages/shared/src/index.ts"]
+    }
+  },
+  "include": ["scripts/**/*.ts", "test/**/*.ts"]
+}

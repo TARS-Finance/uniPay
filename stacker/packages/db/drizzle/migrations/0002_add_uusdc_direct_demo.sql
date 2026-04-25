@@ -1,0 +1,1 @@
+ALTER TYPE "public"."input_denom" ADD VALUE 'uusdc';

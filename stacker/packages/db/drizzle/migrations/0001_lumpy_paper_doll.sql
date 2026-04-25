@@ -1,0 +1,1 @@
+ALTER TYPE "public"."execution_status" ADD VALUE 'simulated' BEFORE 'success';

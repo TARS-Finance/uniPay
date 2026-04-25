@@ -1,0 +1,20 @@
+{
+  "name": "@stacker/keeper",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "dev": "tsx watch src/main.ts"
+  },
+  "dependencies": {
+    "@stacker/chain": "workspace:*",
+    "@stacker/db": "workspace:*",
+    "@stacker/shared": "workspace:*",
+    "dotenv": "^17.2.3",
+    "pino": "^10.3.1",
+    "pino-pretty": "^13.1.2"
+  }
+}
