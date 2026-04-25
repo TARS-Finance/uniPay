@@ -1,0 +1,23 @@
+{
+  "name": "munger-cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/main.ts",
+    "start:watch": "tsx watch src/main.ts",
+    "orderbook-quote": "tsx src/orderbook.ts"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.7.1",
+    "@scure/btc-signer": "^1.3.0",
+    "viem": "^2.33.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

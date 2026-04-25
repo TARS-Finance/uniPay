@@ -1,0 +1,30 @@
+{
+  "api_url": "https://api.example.internal",
+  "poll_interval_ms": 5000,
+  "poll_timeout_ms": 900000,
+  "chains": {
+    "base_sepolia": {
+      "type": "evm",
+      "chain_id": 84532,
+      "chain_name": "Base Sepolia",
+      "rpc_url": "https://sepolia.base.org",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "bitcoin_testnet": {
+      "type": "bitcoin",
+      "network": "bitcoin_testnet",
+      "esplora_url": "https://mempool.space/testnet/api",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    }
+  },
+  "trade": {
+    "source_asset": "base_sepolia:usdc",
+    "target_asset": "bitcoin_testnet:btc",
+    "source_amount": "1000000",
+    "slippage": "auto",
+    "refund_address": "0x0000000000000000000000000000000000000000",
+    "destination_address": "tb1q...",
+    "source_recipient": "0x0000000000000000000000000000000000000000",
+    "destination_recipient": "tb1q..."
+  }
+}

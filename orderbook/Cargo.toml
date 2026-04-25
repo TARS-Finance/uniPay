@@ -1,0 +1,51 @@
+[package]
+name = "tars-orderbook"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+alloy = { version = "=1.0.7", features = ["full"] }
+alloy-primitives = { version = "=0.8.23", features = ["getrandom"] }
+async-trait = "0.1.89"
+axum = { version = "=0.7.5", features = ["macros"] }
+bigdecimal = { version = "0.4.8", features = ["serde"] }
+bitcoin = "0.32.7"
+bs58 = "0.5.1"
+chrono = { version = "0.4.42", features = ["serde"] }
+config = "0.15.18"
+eyre = "0.6.12"
+futures-util = "0.3.31"
+hex = "0.4.3"
+hyperliquid_rust_sdk = "0.6.0"
+moka = { version = "0.12.11", features = ["future"] }
+rand = "0.9.2"
+regex = "1.12.2"
+reqwest = { version = "0.12.24", features = ["json"] }
+rust_decimal = { version = "1.39.0", features = ["maths", "serde-with-str"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = { version = "1.0.145", features = ["arbitrary_precision"] }
+sha2 = "0.10.9"
+solana-client = "2.3.8"
+solana-sdk = "2.3.1"
+spl-associated-token-account = "7.0.0"
+starknet = "0.17.0"
+starknet-crypto = "0.8.1"
+thiserror = "2.0.17"
+tokio = { version = "1.47.1", features = ["full"] }
+tokio-tungstenite = "0.28.0"
+tower-http = { version = "=0.5.2", features = ["cors", "trace"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.20"
+url = "2.5.7"
+
+# Use the local Tars-rs checkout so quote and executors run against the same lane.
+policy = { path = "../Tars-rs/crates/policy" }
+tars = { path = "../Tars-rs", features = [
+    "bitcoin",
+    "orderbook",
+    "primitives",
+    "utils",
+] }
+
+[dev-dependencies]
+tempfile = "3.23.0"
