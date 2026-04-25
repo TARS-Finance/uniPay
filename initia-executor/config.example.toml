@@ -1,0 +1,17 @@
+[initia]
+chain_name          = "initia_evm1_testnet"
+chain_id            = 2124225178762456
+rpc_url             = "https://jsonrpc-evm-1.anvil.asia-southeast.initia.xyz"
+native_htlc_address = "0xYourNativeHTLCAddress"
+
+# Add one entry per ERC20 token you want the executor to handle
+[[initia.erc20_pairs]]
+token_address = "0xYourTokenAddress"
+htlc_address  = "0xYourERC20HTLCAddress"
+
+[database]
+db_url = "postgresql://neondb_owner:npg_qGXRdWZx45Pt@ep-still-firefly-am6lxjgw-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+
+solver_orders_url   = "http://127.0.0.1:4596/"
+fiat_provider_url   = "http://127.0.0.1:6969/"
+polling_interval_ms = 3000
