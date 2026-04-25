@@ -1,0 +1,49 @@
+{
+  "name": "initia-universal-pay",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@initia/icons-react": "^2.1.0",
+    "@initia/initia-registry-types": "^1.0.13",
+    "@initia/interwovenkit-react": "^2.8.0",
+    "@noble/hashes": "^1.8.0",
+    "@solana/web3.js": "^1.98.4",
+    "@tanstack/react-query": "^5.99.2",
+    "bn.js": "^5.2.3",
+    "framer-motion": "^12.38.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "viem": "^2.48.1",
+    "vite-plugin-node-polyfills": "^0.26.0",
+    "wagmi": "^3.6.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "playwright": "^1.59.1",
+    "jsdom": "^27.0.1",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.9",
+    "vitest": "^3.2.4"
+  }
+}
