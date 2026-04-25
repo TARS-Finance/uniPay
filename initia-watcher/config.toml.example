@@ -1,0 +1,24 @@
+database_url = "postgres://user:password@localhost:5432/initia"
+
+# How often to poll for new blocks (milliseconds). Default: 2000
+watcher_interval_ms = 2000
+
+# How many blocks to query per poll. Default: 1000
+watcher_block_span = 1000
+
+# ---- Chain + HTLC pair definitions ----------------------------------------
+# Each (token_address, htlc_address) pair spawns an independent child watcher.
+# Initia EVM rollup chains expose a standard EVM JSON-RPC endpoint.
+
+[[chains]]
+name    = "initia_testnet"
+chain_id = 1320
+rpc_url = "https://jsonrpc-evm-1.anvil.asia-southeast.initia.xyz"
+
+  [[chains.pairs]]
+  token_address = "0xTokenAddressWBTC"
+  htlc_address  = "0xHtlcAddressWBTC"
+
+  [[chains.pairs]]
+  token_address = "0xTokenAddressUSDC"
+  htlc_address  = "0xHtlcAddressUSDC"

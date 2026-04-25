@@ -1,0 +1,37 @@
+[package]
+name = "initia-watcher"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "initia-watcher"
+path = "src/main.rs"
+
+[dependencies]
+alloy = { version = "1.0", features = ["full"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+sqlx = { version = "0.8", features = [
+    "runtime-tokio",
+    "tls-native-tls",
+    "postgres",
+    "bigdecimal",
+    "chrono",
+    "json",
+    "derive",
+    "macros",
+] }
+async-trait = "0.1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "2"
+anyhow = "1"
+url = "2"
+hex = "0.4"
+bigdecimal = { version = "0.4", features = ["serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+orderbook = { git = "https://github.com/TARS-Finance/Tars-rs", package = "orderbook" }
+
+# Pin to the version used by Tars-rs to avoid alloy-primitives 0.8.26 getrandom API bug.
+alloy-primitives = { version = "=0.8.23", features = ["getrandom"] }
