@@ -1,0 +1,86 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - staging
+      - testnet
+      - main
+  pull_request:
+    branches:
+      - staging
+      - testnet
+      - main
+    types: [closed]
+
+jobs:
+  build-push:
+    # Only run on push
+    if: |
+      github.event_name == 'push'
+    runs-on: amd64
+    container:
+      image: catthehacker/ubuntu:act-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set environment variables
+        shell: bash
+        run: |
+          # Determine branch name
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BRANCH_NAME="${{ github.event.pull_request.base.ref }}"
+          else
+            BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          fi
+
+          # Sanitize branch name for Docker tags (replace "/" with "-")
+          SAFE_BRANCH_NAME="${BRANCH_NAME//\//-}"
+
+          # Set image tag and cache tag
+          IMAGE_TAG="version.btcfi.wtf/hashiraio/${{ github.event.repository.name }}:amd64-${SAFE_BRANCH_NAME}"
+          CACHE_TAG="version.btcfi.wtf/hashiraio/${{ github.event.repository.name }}:buildcache-${SAFE_BRANCH_NAME}"
+
+          echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
+          echo "SAFE_BRANCH_NAME=${SAFE_BRANCH_NAME}" >> $GITHUB_ENV
+          echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
+          echo "CACHE_TAG=${CACHE_TAG}" >> $GITHUB_ENV
+
+          echo "Building for branch: ${BRANCH_NAME}"
+          echo "Sanitized branch: ${SAFE_BRANCH_NAME}"
+          echo "Image tag: ${IMAGE_TAG}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Gitea Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: version.btcfi.wtf
+          username: ${{ secrets.GITEAUSERNAME }}
+          password: ${{ secrets.GITEATOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ env.IMAGE_TAG }}
+          # Use inline cache as it's more reliable with Gitea registry
+          cache-from: type=registry,ref=${{ env.IMAGE_TAG }}
+          cache-to: type=inline,mode=max
+          secrets: |
+            ghpat=${{ secrets.GHPAT }}
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
+
+      - name: Build summary
+        run: |
+          echo "   Successfully built and pushed:"
+          echo "   Branch: ${{ env.BRANCH_NAME }}"
+          echo "   Sanitized: ${{ env.SAFE_BRANCH_NAME }}"
+          echo "   Image: ${{ env.IMAGE_TAG }}"
+          echo "   Commit: ${{ github.sha }}"
