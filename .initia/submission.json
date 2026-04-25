@@ -1,12 +1,13 @@
 {
   "project_name": "uniPay",
   "repo_url": "https://github.com/TARS-Finance/uniPay",
-  "commit_sha": "306029b5f2287a17bfa034c9c47cbb6855ae6a7b",
+  "commit_sha": "ac8e736755972b1d0710e53a53edeed81b080977",
   "rollup_chain_id": "tars-1",
-  "deployed_address": "REPLACE_WITH_PRIMARY_DEPLOYED_ADDRESS",
+  "deployed_address": "0x127d91a5898e6138bfbec9ab87ef11026db87cdb",
   "vm": "evm",
+  "explorer_url": "https://scan.testnet.initia.xyz/utars-chain-1",
   "native_feature": "interwoven-bridge",
   "core_logic_path": "initia-fe/src/lib/htlc.ts",
-  "native_feature_frontend_path": "initia-fe/src/components/merchant/MerchantView.tsx",
-  "demo_video_url": "REPLACE_WITH_PUBLIC_LOOM_OR_YOUTUBE_URL"
+  "native_feature_frontend_path": "initia-fe",
+  "demo_video_url": "https://youtu.be/xttfTOuNM-w"
 }
