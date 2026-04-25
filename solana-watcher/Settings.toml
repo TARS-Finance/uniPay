@@ -1,0 +1,28 @@
+# Solana watcher configuration for the Initia Universal Pay-In protocol.
+# The watcher polls the Solana HTLC programs for Initiated / Redeemed / Refunded events
+# and reconciles them against the shared `swaps` table in Postgres (same DB used by
+# the EVM watcher, Initia executor, etc.).
+
+# Name used when writing to swaps.chain. Must match the chain identifier registered
+# in the quote service registry and expected by the frontend.
+chain_name = "solana_devnet"
+
+database_url = "postgresql://neondb_owner:npg_qGXRdWZx45Pt@ep-still-firefly-am6lxjgw-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+rpc_url = "https://api.devnet.solana.com"
+
+watcher_poll_interval_secs = 5
+confirmations_poll_interval_secs = 10
+
+# Native SOL HTLC program (solana-htlc: solana-native-swaps)
+[native_program]
+program_id = "5GtLBHmNBGEzqEDi6SGgKYwbbZru5sm7Sf7Vys8bYqyn"
+# Signature to start watching after. Leave empty string to start from the most
+# recent 100 transactions.
+start_after_transaction = ""
+
+# SPL token HTLC program (solana-htlc: solana-spl-swaps). For Phase-1 we only accept
+# native SOL pay-ins; the SPL watcher is wired but can be disabled via empty program_id.
+[spl_program]
+# SPL program not deployed in Phase-1. Leaving program_id empty disables the SPL watcher.
+program_id = ""
+start_after_transaction = ""
