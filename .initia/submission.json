@@ -2,7 +2,7 @@
   "project_name": "uniPay",
   "repo_url": "https://github.com/TARS-Finance/uniPay",
   "commit_sha": "ac8e736755972b1d0710e53a53edeed81b080977",
-  "rollup_chain_id": "tars-1",
+  "rollup_chain_id": "utars-chain-1",
   "deployed_address": "0x127d91a5898e6138bfbec9ab87ef11026db87cdb",
   "vm": "evm",
   "explorer_url": "https://scan.testnet.initia.xyz/utars-chain-1",
