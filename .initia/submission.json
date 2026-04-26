@@ -1,7 +1,7 @@
 {
   "project_name": "uniPay",
   "repo_url": "https://github.com/TARS-Finance/uniPay",
-  "commit_sha": "ac8e736755972b1d0710e53a53edeed81b080977",
+  "commit_sha": "3e52a639c018ca3579428c1f8d8ef7d9ccbcfb8a",
   "rollup_chain_id": "utars-chain-1",
   "deployed_address": "0x127d91a5898e6138bfbec9ab87ef11026db87cdb",
   "vm": "evm",
@@ -9,5 +9,5 @@
   "native_feature": "interwoven-bridge",
   "core_logic_path": "initia-fe/src/lib/htlc.ts",
   "native_feature_frontend_path": "initia-fe",
-  "demo_video_url": "https://youtu.be/xttfTOuNM-w"
+  "demo_video_url": "https://www.youtube.com/watch?v=DHzId2D8UTQ"
 }
