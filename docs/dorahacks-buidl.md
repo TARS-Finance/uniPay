@@ -100,7 +100,8 @@ The frontend uses InterwovenKit for wallet connection and Initia transaction flo
 
 ### Settlement & Smart Contracts
 
-- Custom Initia EVM rollup (`initia-rollup`, chain ID `tars-1`) with deployed HTLC contracts (`0x127d91a5898e6138bfbec9ab87ef11026db87cdb`)
+- Custom Initia EVM rollup (`initia-rollup`, chain ID `utars-chain-1`) with deployed HTLC contract at `0x127d91a5898e6138bfbec9ab87ef11026db87cdb`
+- Rollup explorer: https://scan.testnet.initia.xyz/utars-chain-1
 - Hashed Timelock Contracts on Bitcoin, EVM, Solana, and Initia for atomic cross-chain settlement
 - Initia Interwoven Bridge for L1 ↔ rollup value movement
 
@@ -181,8 +182,10 @@ Productive payments aren't a feature — they're a category. Most payment proces
 | Field | Value |
 |-------|-------|
 | GitHub | https://github.com/TARS-Finance/uniPay |
+| Demo Video | https://youtu.be/xttfTOuNM-w |
+| Code Walkthrough | https://canva.link/egn67t20032r0aw |
+| Rollup Explorer | https://scan.testnet.initia.xyz/utars-chain-1 |
 | Demo Link | <!-- TODO: live frontend URL --> |
-| Demo Video | <!-- TODO: Loom / YouTube 3-minute pitch video --> |
 | Pitch Deck | <!-- TODO: hosted deck link --> |
 | Twitter / X | <!-- TODO: @unipay or team handle --> |
 | Website | <!-- TODO: unipay.money or landing page --> |
@@ -216,8 +219,8 @@ Before clicking "Submit BUIDL":
 - [ ] Project Name: uniPay
 - [ ] Logo uploaded
 - [ ] Long description pasted
-- [ ] GitHub link added: https://github.com/TARS-Finance/uniPay
-- [ ] Demo video link added
+- [ ] GitHub: https://github.com/TARS-Finance/uniPay
+- [ ] Demo Video: https://youtu.be/xttfTOuNM-w
 - [ ] Live demo URL added
 - [ ] Tech stack listed
 - [ ] Native Initia feature stated (InterwovenKit / Enshrined Liquidity)
