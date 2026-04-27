@@ -1,0 +1,24 @@
+[package]
+name = "utils"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+aes-gcm = "0.10.3"
+alloy = { workspace = true, features = ["full", "node-bindings", "eip712"] }
+base64 = "0.22.1"
+chrono = { workspace = true, features = ["serde"] }
+eyre.workspace = true
+opentelemetry = { version = "0.27", features = ["logs"] }
+opentelemetry-appender-tracing = "0.27"
+opentelemetry-otlp = { version = "0.27", features = ["logs", "http-proto", "reqwest-client"] }
+opentelemetry_sdk = { version = "0.27", features = ["logs", "rt-tokio"] }
+rand.workspace = true
+reqwest.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+sha2.workspace = true
+tokio = { workspace = true, features = ["full", "rt-multi-thread"] }
+tracing.workspace = true
+tracing-subscriber = { workspace = true, features = ["json"] }
+url.workspace = true

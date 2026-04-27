@@ -1,0 +1,39 @@
+[package]
+name = "evm"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+alloy = { workspace = true, features = ["full", "node-bindings", "eip712"] }
+alloy-primitives = { workspace = true, features = ["getrandom"]}
+async-trait.workspace = true
+bigdecimal = { workspace = true, features = ["serde"] }
+bitcoin.workspace = true
+chrono = { workspace = true, features = ["serde"] }
+eyre.workspace = true
+futures.workspace = true
+moka.workspace = true
+mockall.workspace = true
+rand.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["full", "rt-multi-thread"] }
+tracing.workspace = true
+tracing-subscriber.workspace = true
+reqwest.workspace = true
+alloy-rpc-types-eth.workspace = true
+
+# internal
+primitives.workspace = true
+orderbook.workspace = true
+utils.workspace = true
+api.workspace = true
+url.workspace = true
+
+[features]
+default = []
+test-utils = []
+
+[dev-dependencies]
+serial_test.workspace = true

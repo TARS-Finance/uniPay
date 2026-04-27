@@ -1,0 +1,36 @@
+[package]
+name = "bitcoin"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+bitcoin = { package = "bitcoin", version = "0.32.4", features = ["rand-std"] }
+dotenv = "0.15.0"
+eyre = { workspace = true }
+thiserror = { workspace = true }
+alloy = { workspace = true, features = ["full"] }
+sha2 = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+reqwest = { workspace = true, features = ["blocking"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+rand = { workspace = true }
+async-trait = { workspace = true }
+mockall = { workspace = true }
+bigdecimal = { workspace = true, features = ["serde"] }
+once_cell = "1.21.3"
+bon = "3.6.4"
+url = { workspace = true }
+primitives.workspace = true
+chrono.workspace = true
+sqlx.workspace = true
+
+
+# internal 
+orderbook = { workspace = true, features = ["test-utils"] }
+utils.workspace = true
+
+[dev-dependencies]
+futures.workspace = true

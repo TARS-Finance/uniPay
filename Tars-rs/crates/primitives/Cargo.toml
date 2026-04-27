@@ -1,0 +1,14 @@
+[package]
+name = "primitives"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+alloy.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+thiserror.workspace = true
+reqwest.workspace = true
+url.workspace = true
+api.workspace = true
+axum.workspace = true

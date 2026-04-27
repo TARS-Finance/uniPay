@@ -1,0 +1,101 @@
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[package]
+name = "tars"
+version.workspace = true
+edition.workspace = true
+
+[workspace]
+members = [
+    ".",
+    "crates/api",
+    "crates/bitcoin",
+    "crates/evm",
+    "crates/fiat",
+    "crates/orderbook",
+    "crates/policy",
+    "crates/primitives",
+    "crates/quote",
+    "crates/utils",
+]
+resolver = "2"
+
+[features]
+default = []
+api = ["dep:api"]
+bitcoin = ["dep:bitcoin"]
+evm = ["dep:evm"]
+evm-test-utils = ["evm", "evm/test-utils"]
+fiat = ["dep:fiat"]
+orderbook = ["dep:orderbook"]
+orderbook-test-utils = ["orderbook", "orderbook/test-utils"]
+primitives = ["dep:primitives"]
+quote = ["dep:quote"]
+utils = ["dep:utils"]
+full = ["api", "bitcoin", "evm", "fiat", "orderbook", "primitives", "quote", "utils"]
+
+[dependencies]
+api = { path = "crates/api", optional = true }
+bitcoin = { path = "crates/bitcoin", optional = true }
+evm = { path = "crates/evm", optional = true }
+fiat = { path = "crates/fiat", optional = true }
+orderbook = { path = "crates/orderbook", optional = true }
+primitives = { path = "crates/primitives", optional = true }
+quote = { path = "crates/quote", optional = true }
+utils = { path = "crates/utils", optional = true }
+
+[workspace.dependencies]
+alloy = { version = "1.0.7", features = ["full", "node-bindings", "eip712"] }
+alloy-primitives = { version = "0.8.23", features = ["getrandom"] }
+alloy-rpc-types-eth = "1.0.23"
+async-channel = "2.3.1"
+async-trait = "0.1.81"
+axum = "0.7.5"
+bigdecimal = { version = "0.4.0", features = ["serde"] }
+chrono = { version = "0.4.38", features = ["serde"] }
+config = "0.14.0"
+eyre = "0.6.12"
+futures = "0.3"
+futures-util = "0.3.30"
+jsonwebtoken = { version = "9.3.0" }
+mockall = "0.13.0"
+moka = { version = "0.12.8", features = ["future"] }
+once_cell = "1.21.3"
+pin-project = "1.0.12"
+rand = "0.8.5"
+reqwest = "0.12.5"
+serial_test = "3.2.0"
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = { version = "1.0.122", features = ["arbitrary_precision"] }
+sha2 = "0.10.8"
+siwe = "0.6.1"
+sqlx = { version = "0.8.0", features = [
+    "runtime-tokio",
+    "tls-native-tls",
+    "postgres",
+    "derive",
+    "macros",
+    "bigdecimal",
+    "chrono",
+    "json",
+] }
+thiserror = "1.0.63"
+tokio = { version = "1.39.2", features = ["full", "rt-multi-thread"] }
+tower = "0.5.0"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+tower-http = { version = "0.5.2", features = ["trace", "cors"] }
+url = "2.5.0"
+wiremock = "0.6.3"
+
+api = { path = "crates/api" }
+bitcoin = { path = "crates/bitcoin" }
+evm = { path = "crates/evm" }
+fiat = { path = "crates/fiat" }
+orderbook = { path = "crates/orderbook" }
+policy = { path = "crates/policy" }
+primitives = { path = "crates/primitives" }
+quote = { path = "crates/quote" }
+utils = { path = "crates/utils" }

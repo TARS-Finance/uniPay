@@ -1,0 +1,16 @@
+[package]
+name = "fiat"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+eyre.workspace = true
+reqwest = { workspace = true, features = ["json"] }
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+tokio = { workspace = true, features = ["full", "rt-multi-thread"] }
+moka = { workspace = true, features = ["future"] }
+thiserror.workspace = true
+api.workspace = true
+rand.workspace = true
+wiremock.workspace = true

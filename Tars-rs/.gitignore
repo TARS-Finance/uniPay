@@ -1,0 +1,7 @@
+/docs/
+/target
+.env
+.DS_Store
+*.swp
+*.swo
+.codegraph/

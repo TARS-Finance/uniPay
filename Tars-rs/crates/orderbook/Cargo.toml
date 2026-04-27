@@ -1,0 +1,46 @@
+[package]
+name = "orderbook"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+alloy = { workspace = true, features = ["full", "node-bindings", "eip712"] }
+alloy-primitives = { workspace = true, features = ["getrandom"] }
+async-trait.workspace = true
+bigdecimal = { workspace = true, features = ["serde"] }
+chrono = { workspace = true, features = ["serde"] }
+eyre.workspace = true
+mockall.workspace = true
+rand.workspace = true
+reqwest.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+sqlx = { workspace = true, features = [
+    "runtime-tokio",
+    "tls-native-tls",
+    "postgres",
+    "derive",
+    "macros",
+    "bigdecimal",
+    "chrono",
+    "json",
+] }
+thiserror.workspace = true
+tokio = { workspace = true, features = ["full", "rt-multi-thread"] }
+fiat.workspace = true
+moka.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+# internal
+utils.workspace = true
+primitives.workspace = true
+api.workspace = true
+
+[dev-dependencies]
+serial_test.workspace = true
+wiremock.workspace = true
+
+[features]
+default = []
+test-utils = []
